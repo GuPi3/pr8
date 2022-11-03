@@ -15,9 +15,9 @@
                     </ViewCell>
                     <TextCell x:Name="age" Text="Возраст"/>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Margin="15,0,15,0">
+                        <StackLayout Orientation="Horizontal" >
                             <Label Text="Пол" VerticalOptions="Center" Margin="15,0,15,0"/>
-                            <Picker Title="Выберите пол">
+                            <Picker x:Name="gender" Title="Выберите пол" HorizontalOptions="CenterAndExpand">
                                 <Picker.Items>
                                     <x:String>Мужской</x:String>
                                     <x:String>Женский</x:String>
@@ -30,7 +30,7 @@
                     <ViewCell>
                         <StackLayout  Orientation="Horizontal" Margin="15,0,15,0">
                             <Label Text="Староста" VerticalOptions="Center" Margin="15,0,15,0"/>
-                            <Picker Title="Является старостой">
+                            <Picker x:Name="isElder" Title="Является старостой">
                                 <Picker.Items>
                                     <x:String>Да</x:String>
                                     <x:String>Нет</x:String>
@@ -43,7 +43,7 @@
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Margin="15,0,15,0">
                             <Label Text="Общежитие" VerticalOptions="Center" Margin="15,0,15,0"/>
-                            <Picker Title="Нужно ли общежитие">
+                            <Picker x:Name="needRoom" Title="Нужно ли общежитие">
                                 <Picker.Items>
                                     <x:String>Да</x:String>
                                     <x:String>Нет</x:String>
@@ -67,10 +67,37 @@
                     <ViewCell>
                         <Image x:Name="imageSection" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Image>
                     </ViewCell>
+                    <ViewCell>
+                      <StackLayout Orientation="Horizontal">
+                            <Button x:Name="openImage" Text="Добавить фото" Clicked="openImage_Clicked"/>
+                            <Button x:Name="openImage2" Text="Добавить фото" Clicked="openImage2_Clicked"/>
+                       </StackLayout>
+                  </ViewCell>
+                    <ViewCell>
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="save1" Text="Сохранить" Clicked="save1_Clicked"/>
+                            <Button x:Name="open1" Text="Открыть" Clicked="open1_Clicked" />
+
+                        </StackLayout>
+</ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Button x:Name="save2" Text="Сохранить" Clicked="save2_Clicked"/>
+                            <Button x:Name="open2" Text="Открыть" Clicked="open2_Clicked"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Button x:Name="save3" Text="Сохранить" Clicked="save3_Clicked"/>
+                            <Button x:Name="open3" Text="Открыть" Clicked="open3_Clicked"/>
+                        </StackLayout>
+                    </ViewCell>
+                   
                 </TableSection>
             </TableRoot>
         </TableView>
-        <Button x:Name="openImage" Text="image" Clicked="openImage_Clicked"></Button>
+
+        
     </StackLayout>
 
 </ContentPage>
