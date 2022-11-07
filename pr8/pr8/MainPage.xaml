@@ -2,6 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="pr8.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="datePickerStyle" TargetType="DatePicker">
+                <Setter Property="TextColor" Value="Red"/>
+            </Style>
+            <Style x:Key="lableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Red"/>
+
+            </Style>
+            <Style x:Key="pickerStyle" TargetType="Picker">
+                <Setter Property="TextColor" Value="Green"/>
+            </Style>
+            <Style x:Key="buttonSaveStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="Aqua"/>
+            </Style>
+            <Style x:Key="buttonOpenStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="Blue"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        
+   
 
     <StackLayout>
         <TableView>
@@ -11,12 +34,12 @@
                     <EntryCell x:Name="name" Label="Имя" Placeholder="Введите имя"/>
                     <EntryCell x:Name="othestvo" Label="Отчество" Placeholder="Введите отчество"/>
                     <ViewCell>
-                        <DatePicker x:Name="dateBirth" Margin="15,0,15,0" DateSelected="dateBirth_DateSelected"/>
+                        <DatePicker Style="{StaticResource Key=datePickerStyle}" x:Name="dateBirth" Margin="15,0,15,0" DateSelected="dateBirth_DateSelected"/>
                     </ViewCell>
                     <TextCell x:Name="age" Text="Возраст"/>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" >
-                            <Label Text="Пол" VerticalOptions="Center" Margin="15,0,15,0"/>
+                            <Label Style="{StaticResource Key=lableStyle}" Text="Пол" VerticalOptions="Center" Margin="15,0,15,0"/>
                             <Picker x:Name="gender" Title="Выберите пол" HorizontalOptions="CenterAndExpand">
                                 <Picker.Items>
                                     <x:String>Мужской</x:String>
@@ -29,8 +52,8 @@
                 <TableSection>
                     <ViewCell>
                         <StackLayout  Orientation="Horizontal" Margin="15,0,15,0">
-                            <Label Text="Староста" VerticalOptions="Center" Margin="15,0,15,0"/>
-                            <Picker x:Name="isElder" Title="Является старостой">
+                            <Label Style="{StaticResource Key=lableStyle}" Text="Староста" VerticalOptions="Center" Margin="15,0,15,0"/>
+                            <Picker Style="{StaticResource Key=pickerStyle}" x:Name="isElder" Title="Является старостой">
                                 <Picker.Items>
                                     <x:String>Да</x:String>
                                     <x:String>Нет</x:String>
@@ -43,7 +66,7 @@
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Margin="15,0,15,0">
                             <Label Text="Общежитие" VerticalOptions="Center" Margin="15,0,15,0"/>
-                            <Picker x:Name="needRoom" Title="Нужно ли общежитие">
+                            <Picker Style="{StaticResource Key=pickerStyle}" x:Name="needRoom" Title="Нужно ли общежитие">
                                 <Picker.Items>
                                     <x:String>Да</x:String>
                                     <x:String>Нет</x:String>
@@ -75,21 +98,21 @@
                   </ViewCell>
                     <ViewCell>
         <StackLayout Orientation="Horizontal">
-            <Button x:Name="save1" Text="Сохранить" Clicked="save1_Clicked"/>
-                            <Button x:Name="open1" Text="Открыть" Clicked="open1_Clicked" />
+                            <Button Style="{StaticResource Key=buttonSaveStyle}" x:Name="save1" Text="Сохранить" Clicked="save1_Clicked"/>
+                            <Button Style="{StaticResource Key=buttonOpenStyle}" x:Name="open1" Text="Открыть" Clicked="open1_Clicked" />
 
                         </StackLayout>
 </ViewCell>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal">
-                            <Button x:Name="save2" Text="Сохранить" Clicked="save2_Clicked"/>
-                            <Button x:Name="open2" Text="Открыть" Clicked="open2_Clicked"/>
+                                <Button Style="{StaticResource Key=buttonSaveStyle}" x:Name="save2" Text="Сохранить" Clicked="save2_Clicked"/>
+                                <Button Style="{StaticResource Key=buttonOpenStyle}" x:Name="open2" Text="Открыть" Clicked="open2_Clicked"/>
                         </StackLayout>
                     </ViewCell>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal">
-                            <Button x:Name="save3" Text="Сохранить" Clicked="save3_Clicked"/>
-                            <Button x:Name="open3" Text="Открыть" Clicked="open3_Clicked"/>
+                                <Button Style="{StaticResource Key=buttonSaveStyle}" x:Name="save3" Text="Сохранить" Clicked="save3_Clicked"/>
+                                <Button Style="{StaticResource Key=buttonOpenStyle}" x:Name="open3" Text="Открыть" Clicked="open3_Clicked"/>
                         </StackLayout>
                     </ViewCell>
                    
@@ -99,5 +122,5 @@
 
         
     </StackLayout>
-
+ </ContentPage.Content>
 </ContentPage>
